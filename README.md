@@ -86,25 +86,9 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 >   
 >      ---
 
-## 6. Calculadora de Risco Pós-Clique (Simulador de Avaliação)
-*Avaliação dinâmica de ameaça e protocolo de contenção de emergência:*
+## 6. Calculadora de Risco Pós-Clique (Simulador Interativo)
+*Avaliação dinâmica de ameaça e protocolo dinâmico de contenção:*
 
-| Marcar se ocorreu | Critério de Avaliação | Impacto no Risco |
-| :---: | :--- | :---: |
-| **[ ]** | Baixou ou executou algum arquivo desconhecido (*payload*) | **+40%** |
-| **[ ]** | Inseriu senhas ou dados corporativos na página falsa | **+35%** |
-| **[ ]** | O dispositivo continua conectado à rede interna corporativa | **+10%** |
+👉 **[Acessar a Calculadora Interativa de Risco (Simulador em Tempo Real)](calculadora.html)**
 
-> **📊 Nível de Ameaça Base:** `15% (Baixo)` &nbsp;&nbsp;|&nbsp;&nbsp; **Status:** `🟢 RISCO CONTROLADO`  
-> *Nota: Caso múltiplos critérios sejam selecionados pelo colaborador, o nível de ameaça eleva-se para crítico, exigindo o isolamento imediato da rede e o acionamento do SOC.*
-
----
-
-## Referências e Ferramentas Úteis
-- 🔗 [Teste de Phishing do Google Jigsaw](https://phishingquiz.withgoogle.com/)
-- 🛡️ [Base de Vulnerabilidades: CVE.org](https://www.cve.org/)
-- 📘 [Cartilha CERT.br: Cartilha de Segurança para Internet](https://cartilha.cert.br/)
-
----
-
-> *Este material é parte integrante do Trabalho de Conclusão de Curso da Fatec Ourinhos (2026).*
+*(Selecione os incidentes ocorridos para calcular a porcentagem exata de risco e acionar os protocolos de contenção da empresa).*
