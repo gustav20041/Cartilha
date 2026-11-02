@@ -62,13 +62,6 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 
 *Este material é parte integrante do Trabalho de Conclusão de Curso da Fatec Ourinhos (2026).*
 
----
-
----
-
----
-
----
 
 ## 🚨 5. Protocolo de Resposta a Incidentes: Guia Prático Pós-Clique (Contenção Imediata)
 
