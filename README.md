@@ -66,6 +66,8 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 
 ---
 
+---
+
 > ## 🚨 5. Protocolo de Resposta a Incidentes: Guia Prático Pós-Clique (Contenção Imediata)
 > 
 > Caso o colaborador identifique ou suspeite de uma interação maliciosa (clique em *phishing*, execução de carga maliciosa ou fornecimento de credenciais corporativas), o plano de ação imediata segue as diretrizes de contenção rápida:
@@ -81,24 +83,3 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 > 3. **Notificação Forense e Acionamento do SOC / Equipe de TI:**
 >    * **Ação:** Comunique formalmente o Centro de Operações de Segurança (SOC) ou o suporte técnico da organização, fornecendo o link exato (URL) ou o anexo suspeito **sem reabri-los**, além de detalhar se houve digitação de credenciais.
 >    * **Fundamentação Técnica:** Permite que a equipe de resposta a incidentes isole logs de rede, realize a análise forense do host e inicie rapidamente os procedimentos de erradicação e recuperação do perímetro corporativo.
-
-## 6. Calculadora de Risco Pós-Clique (Simulador de Avaliação)
-*Avaliação dinâmica de ameaça e protocolo de contenção de emergência:*
-
-| Marcar se ocorreu | Critério de Avaliação | Impacto no Risco |
-| :---: | :---| :---: |
-| [ ] | Baixou ou executou algum arquivo desconhecido (`payload`) | +40% |
-| [ ] | Inseriu senhas ou dados corporativos na página falsa | +35% |
-| [ ] | O dispositivo continua conectado à rede interna corporativa | +10% |
-
-> **Nível de Ameaça Base:** `15% (Baixo)` — **Status:** `RISCO CONTROLADO`  
-> *(Nota: Caso múltiplos critérios sejam selecionados pelo colaborador, o nível de ameaça eleva-se para crítico, exigindo o isolamento imediato da rede e acionamento do SOC).*
-
----
-
-## Referências e Ferramentas Úteis
-- [Teste de Phishing do Google Jigsaw](https://phishingquiz.withgoogle.com/)
-- Base de Vulnerabilidades: [CVE.org](https://www.cve.org/)
-- Cartilha CERT.br: [Cartilha de Segurança para Internet](https://cartilha.cert.br/)
-
-*Este material é parte integrante do Trabalho de Conclusão de Curso da Fatec Ourinhos (2026).*
