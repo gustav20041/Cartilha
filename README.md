@@ -64,9 +64,16 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 
 ---
 
-## 5. Protocolo de Resposta a Incidentes (Pós-Clique)
-Se você clicou em um link suspeito ou forneceu dados, siga imediatamente este protocolo de contenção de danos:
-
-1. **Isolar o Dispositivo da Rede:** Desative a conexão Wi-Fi e remova o cabo de rede Ethernet imediatamente. Isso bloqueia a comunicação com servidores de Comando e Controle (C2) e impede a exfiltração de dados em tempo real.
-2. **Alterar Credenciais (em Dispositivo Limpo):** Acesse suas contas corporativas e pessoais a partir de um aparelho seguro (ex: celular utilizando dados móveis), altere as senhas e encerre todas as sessões ativas. Ative o Múltiplo Fator de Autenticação (MFA).
-3. **Notificar a Equipe de TI ou SOC:** Informe imediatamente o setor de segurança da informação. Forneça o endereço da URL maliciosa (sem reabri-la) e especifique se houve inserção de dados ou download de arquivos.
+<!-- PARTE 5: PROTOCOLO DE RESPOSTA A INCIDENTES -->
+    <div class="alert-box">
+        <h3 style="color: #dc3545; margin-top: 0; display: flex; align-items: center; gap: 8px;">
+            🚨 5. Protocolo de Resposta a Incidentes (Contenção Pós-Clique)
+        </h3>
+        <p>Caso o colaborador perceba que interagiu com um link malicioso ou forneceu credenciais em uma página fraudulenta, deve executar imediatamente o seguinte fluxograma de contenção de danos:</p>
+        
+        <ol style="line-height: 1.8; margin-bottom: 0;">
+            <li><strong>Isolamento Imediato do Dispositivo:</strong> Desative a conexão Wi-Fi e remova o cabo de rede Ethernet do computador ou celular atingido. <em>Objetivo:</em> Interromper a comunicação de eventuais malwares com servidores de Comando e Controle (C2) e bloquear a exfiltração de dados em tempo real.</li>
+            <li><strong>Alteração de Credenciais em Dispositivo Limpo:</strong> Acesse contas corporativas, bancárias e pessoais utilizando um dispositivo comprovadamente seguro (ex.: smartphone através de dados móveis) e altere todas as senhas comprometidas. Ative obrigatoriamente o Múltiplo Fator de Autenticação (MFA) e encerre as sessões ativas remotamente.</li>
+            <li><strong>Notificação Imediata à Equipe de TI ou SOC:</strong> Informe o setor de segurança da informação da empresa sem demora. Forneça o endereço exato da URL maliciosa (sem reabri-la) e especifique se houve inserção de credenciais ou download de arquivos para auditoria forense rápida.</li>
+        </ol>
+    </div>
