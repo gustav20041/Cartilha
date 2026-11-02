@@ -87,7 +87,6 @@ Caso o colaborador identifique ou suspeite de uma interação maliciosa (clique 
    * **Fundamentação Técnica:** Permite que a equipe de resposta a incidentes isole logs de rede, realize a análise forense do host e inicie rapidamente os procedimentos de erradicação e recuperação do perímetro corporativo.
 
 ---
->      ---
 
 ## 6. Calculadora de Risco Pós-Clique (Simulador Interativo)
 *Avaliação dinâmica de ameaça e protocolo dinâmico de contenção:*
