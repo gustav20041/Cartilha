@@ -61,3 +61,26 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 * Cartilha CERT.br: [Cartilha de Segurança para Internet](https://cartilha.cert.br/)
 
 *Este material é parte integrante do Trabalho de Conclusão de Curso da Fatec Ourinhos (2026).*
+
+---
+
+## 5. Protocolo de Resposta a Incidentes (Pós-Clique)
+Se você clicou em um link suspeito ou forneceu dados, siga imediatamente este protocolo de contenção de danos:
+
+1. **Isolar o Dispositivo da Rede:** Desative a conexão Wi-Fi e remova o cabo de rede Ethernet imediatamente. Isso bloqueia a comunicação com servidores de Comando e Controle (C2) e impede a exfiltração de dados em tempo real.
+2. **Alterar Credenciais (em Dispositivo Limpo):** Acesse suas contas corporativas e pessoais a partir de um aparelho seguro (ex: celular utilizando dados móveis), altere as senhas e encerre todas as sessões ativas. Ative o Múltiplo Fator de Autenticação (MFA).
+3. **Notificar a Equipe de TI ou SOC:** Informe imediatamente o setor de segurança da informação. Forneça o endereço da URL maliciosa (sem reabri-la) e especifique se houve inserção de dados ou download de arquivos.
+
+---
+
+## 6. Calculadora de Risco Pós-Clique (Simulador de Avaliação)
+*Avaliação dinâmica de ameaça e protocolo de contenção de emergência:*
+
+* **[ ]** Baixou ou executou algum arquivo desconhecido
+* **[ ]** Inseriu senhas ou dados corporativos na página falsa
+* **[ ]** O dispositivo continua conectado à rede interna da empresa
+
+> **Nível de Ameaça Estimado:** `15% (Baixo)`  
+> **Status:** `RISCO CONTROLADO` *(Se múltiplos itens forem selecionados, o indicador altera-se automaticamente).*
+
+---
