@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora SOC Enterprise - TCC Fatec Ourinhos</title>
+    <title>Calculadora SOC Enterprise (15 Vetores) - TCC Fatec Ourinhos</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 820px; margin: 30px auto; padding: 20px; background-color: #0f172a; color: #f8fafc; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 850px; margin: 30px auto; padding: 20px; background-color: #0f172a; color: #f8fafc; }
         .calc-box { background-color: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: 1px solid #334155; }
         h2 { color: #38bdf8; margin-top: 0; }
         .subtitle { color: #94a3b8; font-size: 0.95em; margin-bottom: 20px; }
@@ -26,7 +26,7 @@
 <body>
 
     <div class="calc-box">
-        <h2>Calculadora SOC Enterprise (12 Vetores)</h2>
+        <h2>Calculadora SOC Enterprise (15 Vetores)</h2>
         <p class="subtitle">Simulador Avançado de Incidentes de Engenharia Social e Resposta Automatizada</p>
         
         <form id="calcRiscoForm">
@@ -35,20 +35,23 @@
             <label><input type="checkbox" id="chk2" onchange="atualizarCalculoRisco()"> Abriu documento corporativo com macros maliciosas ativadas</label>
             <label><input type="checkbox" id="chk3" onchange="atualizarCalculoRisco()"> Inseriu credenciais corporativas ou código MFA em página falsa (*phishing*)</label>
             <label><input type="checkbox" id="chk4" onchange="atualizarCalculoRisco()"> Conectou dispositivo USB/Pen Drive desconhecido encontrado na empresa (*Baiting*)</label>
+            <label><input type="checkbox" id="chk5" onchange="atualizarCalculoRisco()"> Forneceu dados sensíveis via contacto telefónico ou leu QR Code suspeito (*Vishing / Quishing*)</label>
 
             <div class="group-title">2. Propagação e Privilégios</div>
-            <label><input type="checkbox" id="chk5" onchange="atualizarCalculoRisco()"> O dispositivo afetado está conectado ativamente à rede interna (Wi-Fi/Cabo)</label>
-            <label><input type="checkbox" id="chk6" onchange="atualizarCalculoRisco()"> A conta comprometida possui privilégios de Administrador ou Gestor</label>
-            <label><input type="checkbox" id="chk7" onchange="atualizarCalculoRisco()"> Houve desativação ou bypass consciente do antivírus/EDR local</label>
+            <label><input type="checkbox" id="chk6" onchange="atualizarCalculoRisco()"> O dispositivo afetado está conectado ativamente à rede interna (Wi-Fi/Cabo)</label>
+            <label><input type="checkbox" id="chk7" onchange="atualizarCalculoRisco()"> A conta comprometida possui privilégios de Administrador ou Gestor</label>
+            <label><input type="checkbox" id="chk8" onchange="atualizarCalculoRisco()"> Houve desativação ou bypass consciente do antivírus/EDR local</label>
 
             <div class="group-title">3. Persistência e Movimento Lateral</div>
-            <label><input type="checkbox" id="chk8" onchange="atualizarCalculoRisco()"> Identificada criação de novas contas de utilizador ou tarefas agendadas suspeitas</label>
-            <label><input type="checkbox" id="chk9" onchange="atualizarCalculoRisco()"> Há registo de tentativas de varrimento de portas ou conexões a outros ativos internos</label>
+            <label><input type="checkbox" id="chk9" onchange="atualizarCalculoRisco()"> Identificada criação de novas contas de utilizador ou tarefas agendadas suspeitas</label>
+            <label><input type="checkbox" id="chk10" onchange="atualizarCalculoRisco()"> Há registo de tentativas de varrimento de portas ou conexões a outros ativos internos</label>
+            <label><input type="checkbox" id="chk11" onchange="atualizarCalculoRisco()"> Acesso remoto estabelecido via VPN corporativa sem autenticação multifator rigorosa</label>
 
             <div class="group-title">4. Impacto, Exfiltração e Resposta</div>
-            <label><input type="checkbox" id="chk10" onchange="atualizarCalculoRisco()"> O equipamento continha dados sensíveis, financeiros ou de clientes</label>
-            <label><input type="checkbox" id="chk11" onchange="atualizarCalculoRisco()"> Detetado tráfego volumoso de saída (*exfiltração*) para servidores desconhecidos</label>
-            <label><input type="checkbox" id="chk12" onchange="atualizarCalculoRisco()"> O colaborador demorou mais de 24 horas para reportar o incidente ao SOC</label>
+            <label><input type="checkbox" id="chk12" onchange="atualizarCalculoRisco()"> O equipamento continha dados sensíveis, financeiros ou de clientes</label>
+            <label><input type="checkbox" id="chk13" onchange="atualizarCalculoRisco()"> Detetado tráfego volumoso de saída (*exfiltração*) para servidores desconhecidos</label>
+            <label><input type="checkbox" id="chk14" onchange="atualizarCalculoRisco()"> Identificadas tentativas de alteração ou eliminação de cópias de segurança (*backups*)</label>
+            <label><input type="checkbox" id="chk15" onchange="atualizarCalculoRisco()"> O colaborador demorou mais de 24 horas para reportar o incidente ao SOC</label>
         </form>
 
         <div class="result-container">
@@ -74,18 +77,22 @@
     function atualizarCalculoRisco() {
         let risco = 5;
         
-        if (document.getElementById('chk1').checked) risco += 15;
+        if (document.getElementById('chk1').checked) risco += 12;
         if (document.getElementById('chk2').checked) risco += 10;
-        if (document.getElementById('chk3').checked) risco += 15;
+        if (document.getElementById('chk3').checked) risco += 12;
         if (document.getElementById('chk4').checked) risco += 10;
         if (document.getElementById('chk5').checked) risco += 10;
-        if (document.getElementById('chk6').checked) risco += 15;
-        if (document.getElementById('chk7').checked) risco += 15;
-        if (document.getElementById('chk8').checked) risco += 15;
-        if (document.getElementById('chk9').checked) risco += 15;
+        if (document.getElementById('chk6').checked) risco += 8;
+        if (document.getElementById('chk7').checked) risco += 12;
+        if (document.getElementById('chk8').checked) risco += 12;
+        if (document.getElementById('chk9').checked) risco += 10;
         if (document.getElementById('chk10').checked) risco += 10;
-        if (document.getElementById('chk11').checked) risco += 15;
+        if (document.getElementById('chk11').checked) risco += 10;
+        if (document.getElementById('chk12').checked) meRisco += 10;
         if (document.getElementById('chk12').checked) risco += 10;
+        if (document.getElementById('chk13').checked) risco += 12;
+        if (document.getElementById('chk14').checked) risco += 15;
+        if (document.getElementById('chk15').checked) risco += 8;
 
         if (risco > 100) risco = 100;
 
