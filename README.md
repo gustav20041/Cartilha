@@ -64,68 +64,9 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 
 ---
 
-## 6. Calculadora de Risco Pós-Clique (Simulador de Avaliação Interativo)
-*Marque o que ocorreu após o clique para calcular o nível de ameaça em tempo real:*
+## 5. Protocolo de Resposta a Incidentes (Pós-Clique)
+Se você clicou em um link suspeito ou forneceu dados, siga imediatamente este protocolo de contenção de danos:
 
-<div style="background-color: #1e293b; color: white; padding: 20px; border-radius: 8px; font-family: sans-serif; max-width: 650px;">
-  <form id="calcRiscoForm" style="margin-bottom: 15px;">
-    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-      <input type="checkbox" id="chkDownload" onchange="atualizarCalculoRisco()" style="transform: scale(1.2); margin-right: 8px;">
-      Baixou ou executou algum arquivo desconhecido
-    </label>
-    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-      <input type="checkbox" id="chkSenha" onchange="atualizarCalculoRisco()" style="transform: scale(1.2); margin-right: 8px;">
-      Inseriu senhas ou dados corporativos na página falsa
-    </label>
-    <label style="display: block; margin-bottom: 10px; cursor: pointer;">
-      <input type="checkbox" id="chkRede" onchange="atualizarCalculoRisco()" style="transform: scale(1.2); margin-right: 8px;">
-      O dispositivo continua conectado à rede interna da empresa
-    </label>
-  </form>
-
-  <div style="background-color: #0f172a; padding: 15px; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #334155;">
-    <div>
-      <span style="font-size: 0.85em; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Nível de Ameaça Estimado:</span>
-      <h2 id="pctRiscoTexto" style="margin: 5px 0 0 0; color: #22c55e; font-size: 1.8em;">15% (Baixo)</h2>
-    </div>
-    <div id="statusBadgeRisco" style="background-color: #22c55e; color: #000; padding: 8px 14px; border-radius: 20px; font-weight: bold; font-size: 0.8em; text-align: center;">
-      RISCO CONTROLADO
-    </div>
-  </div>
-</div>
-
-<script>
-function atualizarCalculoRisco() {
-  let risco = 15;
-  const download = document.getElementById('chkDownload').checked;
-  const senha = document.getElementById('chkSenha').checked;
-  const rede = document.getElementById('chkRede').checked;
-
-  if (download) risco += 40;
-  if (senha) risco += 35;
-  if (rede && (download || senha)) risco += 10;
-
-  const pctElem = document.getElementById('pctRiscoTexto');
-  const badgeElem = document.getElementById('statusBadgeRisco');
-
-  if (risco >= 70) {
-    pctElem.innerText = risco + "% (Crítico)";
-    pctElem.style.color = "#ef4444";
-    badgeElem.innerText = "ALTO RISCO - ISOLAR REDE";
-    badgeElem.style.backgroundColor = "#ef4444";
-    badgeElem.style.color = "#ffffff";
-  } else if (risco >= 40) {
-    pctElem.innerText = risco + "% (Moderado)";
-    pctElem.style.color = "#f59e0b";
-    badgeElem.innerText = "ATENÇÃO NECESSÁRIA";
-    badgeElem.style.backgroundColor = "#f59e0b";
-    badgeElem.style.color = "#000000";
-  } else {
-    pctElem.innerText = risco + "% (Baixo)";
-    pctElem.style.color = "#22c55e";
-    badgeElem.innerText = "RISCO CONTROLADO";
-    badgeElem.style.backgroundColor = "#22c55e";
-    badgeElem.style.color = "#000000";
-  }
-}
-</script>
+1. **Isolar o Dispositivo da Rede:** Desative a conexão Wi-Fi e remova o cabo de rede Ethernet imediatamente. Isso bloqueia a comunicação com servidores de Comando e Controle (C2) e impede a exfiltração de dados em tempo real.
+2. **Alterar Credenciais (em Dispositivo Limpo):** Acesse suas contas corporativas e pessoais a partir de um aparelho seguro (ex: celular utilizando dados móveis), altere as senhas e encerre todas as sessões ativas. Ative o Múltiplo Fator de Autenticação (MFA).
+3. **Notificar a Equipe de TI ou SOC:** Informe imediatamente o setor de segurança da informação. Forneça o endereço da URL maliciosa (sem reabri-la) e especifique se houve inserção de dados ou download de arquivos.
