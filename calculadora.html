@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Avançada de Risco Pós-Clique - TCC Fatec Ourinhos</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 750px; margin: 40px auto; padding: 20px; background-color: #0f172a; color: #f8fafc; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 30px auto; padding: 20px; background-color: #0f172a; color: #f8fafc; }
         .calc-box { background-color: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: 1px solid #334155; }
         h2 { color: #38bdf8; margin-top: 0; }
         .subtitle { color: #94a3b8; font-size: 0.95em; margin-bottom: 20px; }
         .group-title { font-size: 1em; color: #38bdf8; margin: 20px 0 10px 0; font-weight: bold; border-bottom: 1px solid #334155; padding-bottom: 5px; }
-        label { display: block; margin-bottom: 12px; cursor: pointer; font-size: 0.98em; }
-        input[type="checkbox"] { transform: scale(1.2); margin-right: 10px; accent-color: #38bdf8; }
+        label { display: block; margin-bottom: 10px; cursor: pointer; font-size: 0.95em; }
+        input[type="checkbox"] { transform: scale(1.1); margin-right: 10px; accent-color: #38bdf8; }
         .result-container { background-color: #0f172a; padding: 20px; border-radius: 8px; margin-top: 25px; border: 1px solid #334155; }
         .header-result { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         #pctRiscoTexto { font-size: 2em; margin: 0; font-weight: bold; color: #22c55e; }
         .badge { padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 0.85em; text-transform: uppercase; }
         .progress-bar-container { background-color: #334155; border-radius: 10px; height: 16px; width: 100%; overflow: hidden; margin-bottom: 15px; }
-        .progress-bar { height: 100%; width: 10%; background-color: #22c55e; transition: width 0.4s ease, background-color 0.4s ease; }
+        .progress-bar { height: 100%; width: 5%; background-color: #22c55e; transition: width 0.4s ease, background-color 0.4s ease; }
         .msg-alerta { font-size: 0.95em; color: #cbd5e1; border-top: 1px solid #334155; padding-top: 12px; margin: 0; }
         .btn-voltar { display: inline-block; margin-top: 25px; color: #38bdf8; text-decoration: none; font-weight: bold; }
         .btn-voltar:hover { text-decoration: underline; }
@@ -26,44 +26,32 @@
 <body>
 
     <div class="calc-box">
-        <h2>Calculadora Avançada de Risco Pós-Clique</h2>
-        <p class="subtitle">Simulador de Incidentes de Engenharia Social e Resposta Automatizada</p>
+        <h2>Calculadora de Risco Pós-Clique (10 Vetores)</h2>
+        <p class="subtitle">Simulador Avançado de Incidentes de Engenharia Social e Resposta a Incidentes</p>
         
         <form id="calcRiscoForm">
-            <div class="group-title">1. Vetor Inicial de Comprometimento</div>
-            <label>
-                <input type="checkbox" id="chkDownload" onchange="atualizarCalculoRisco()">
-                Baixou ou executou ficheiro executável desconhecido (*payload* malicioso)
-            </label>
-            <label>
-                <input type="checkbox" id="chkMacro" onchange="atualizarCalculoRisco()">
-                Abriu documento corporativo com macros ativadas de fonte externa
-            </label>
-            <label>
-                <input type="checkbox" id="chkCredencial" onchange="atualizarCalculoRisco()">
-                Inseriu credenciais corporativas ou código MFA em página de *phishing*
-            </label>
+            <div class="group-title">1. Vetor Inicial e Execução</div>
+            <label><input type="checkbox" id="chk1" onchange="atualizarCalculoRisco()"> Baixou e executou ficheiro executável desconhecido (*payload* malicioso)</label>
+            <label><input type="checkbox" id="chk2" onchange="atualizarCalculoRisco()"> Abriu documento corporativo com macros maliciosas ativadas</label>
+            <label><input type="checkbox" id="chk3" onchange="atualizarCalculoRisco()"> Inseriu credenciais corporativas ou código MFA em página falsa (*phishing*)</label>
+            <label><input type="checkbox" id="chk4" onchange="atualizarCalculoRisco()"> Conectou dispositivo USB/Pen Drive desconhecido encontrado na empresa (*Baiting*)</label>
 
-            <div class="group-title">2. Propagação e Contexto do Ativo</div>
-            <label>
-                <input type="checkbox" id="chkRede" onchange="atualizarCalculoRisco()">
-                O dispositivo afetado continua conectado à rede interna da empresa (Wi-Fi/Cabo)
-            </label>
-            <label>
-                <input type="checkbox" id="chkPrivilegio" onchange="atualizarCalculoRisco()">
-                A conta comprometida possui privilégios elevados (Administrador / Gestor)
-            </label>
-            <label>
-                <input type="checkbox" id="chkDados" onchange="atualizarCalculoRisco()">
-                O equipamento continha dados sensíveis, financeiros ou de clientes armazenados
-            </label>
+            <div class="group-title">2. Propagação e Privilégios</div>
+            <label><input type="checkbox" id="chk5" onchange="atualizarCalculoRisco()"> O dispositivo afetado está conectado ativamente à rede interna (Wi-Fi/Cabo)</label>
+            <label><input type="checkbox" id="chk6" onchange="atualizarCalculoRisco()"> A conta comprometida possui privilégios de Administrador ou Gestor</label>
+            <label><input type="checkbox" id="chk7" onchange="atualizarCalculoRisco()"> Houve desativação ou bypass consciente do antivírus/EDR local</label>
+
+            <div class="group-title">3. Impacto e Dados Expostos</div>
+            <label><input type="checkbox" id="chk8" onchange="atualizarCalculoRisco()"> O equipamento continha dados sensíveis, financeiros ou de clientes</label>
+            <label><input type="checkbox" id="chk9" onchange="atualizarCalculoRisco()"> Identificados acessos simultâneos a partir de localizações geográficas atípicas</label>
+            <label><input type="checkbox" id="chk10" onchange="atualizarCalculoRisco()"> O colaborador demorou mais de 24 horas para reportar o incidente ao SOC</label>
         </form>
 
         <div class="result-container">
             <div class="header-result">
                 <div>
                     <span style="font-size: 0.8em; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;">Nível de Ameaça Estimado</span>
-                    <h3 id="pctRiscoTexto">10%</h3>
+                    <h3 id="pctRiscoTexto">5%</h3>
                 </div>
                 <div id="statusBadgeRisco" class="badge" style="background-color: #22c55e; color: #000;">Baixo</div>
             </div>
@@ -72,7 +60,7 @@
                 <div id="barraProgresso" class="progress-bar"></div>
             </div>
 
-            <p id="textoOrientacao" class="msg-alerta">Risco controlado. Mantenha os procedimentos padrão de monitorização.</p>
+            <p id="textoOrientacao" class="msg-alerta">Risco controlado. Mantenha os procedimentos padrão de monitorização e suporte preventivo.</p>
         </div>
 
         <a href="README.md" class="btn-voltar">← Voltar para a Cartilha Principal</a>
@@ -80,21 +68,18 @@
 
     <script>
     function atualizarCalculoRisco() {
-        let risco = 10;
+        let risco = 5;
         
-        const download = document.getElementById('chkDownload').checked;
-        const macro = document.getElementById('chkMacro').checked;
-        const credencial = document.getElementById('chkCredencial').checked;
-        const rede = document.getElementById('chkRede').checked;
-        const privilegio = document.getElementById('chkPrivilegio').checked;
-        const dados = document.getElementById('chkDados').checked;
-
-        if (download) risco += 35;
-        if (macro) risco += 25;
-        if (credencial) risco += 40;
-        if (rede) risco += 15;
-        if (privilegio) risco += 25;
-        if (dados) risco += 20;
+        if (document.getElementById('chk1').checked) risco += 20;
+        if (document.getElementById('chk2').checked) risco += 15;
+        if (document.getElementById('chk3').checked) risco += 20;
+        if (document.getElementById('chk4').checked) risco += 15;
+        if (document.getElementById('chk5').checked) risco += 10;
+        if (document.getElementById('chk6').checked) risco += 15;
+        if (document.getElementById('chk7').checked) risco += 20;
+        if (document.getElementById('chk8').checked) risco += 15;
+        if (document.getElementById('chk9').checked) risco += 15;
+        if (document.getElementById('chk10').checked) risco += 15;
 
         if (risco > 100) risco = 100;
 
