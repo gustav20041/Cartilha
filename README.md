@@ -68,22 +68,25 @@ Você consegue identificar um ataque de Engenharia Social gerado por IA? Partici
 
 ---
 
-> ## 🚨 5. Protocolo de Resposta a Incidentes: Guia Prático Pós-Clique (Contenção Imediata)
-> 
-> Caso o colaborador identifique ou suspeite de uma interação maliciosa (clique em *phishing*, execução de carga maliciosa ou fornecimento de credenciais corporativas), o plano de ação imediata segue as diretrizes de contenção rápida:
-> 
-> 1. **Isolamento Físico e Lógico do Endpoint (Contenção Inicial):**
->    * **Ação:** Desative imediatamente o Wi-Fi, retire o cabo de rede Ethernet e desative conexões Bluetooth do computador ou dispositivo móvel afetado.
->    * **Fundamentação Técnica:** Interrompe instantaneamente o tráfego de rede e bloqueia o contato do *payload* com servidores de Comando e Controle (C2), prevenindo o *Lateral Movement* (movimento lateral na rede interna) e a exfiltração em massa de dados confidenciais.
-> 
-> 2. **Higienização de Credenciais e Revogação de Sessões (Mitigação de Impacto):**
->    * **Ação:** Utilizando um **dispositivo limpo e seguro** (como um smartphone pessoal conectado exclusivamente à rede móvel 4G/5G), acesse os painéis de controle das contas comprometidas (e-mail corporativo, VPN, sistemas internos).
->    * **Fundamentação Técnica:** Altere as senhas de acesso, force o encerramento remoto de todas as sessões ativas (*Token Revocation*) e certifique-se de que o **Múltiplo Fator de Autenticação (MFA)** com chaves de segurança ou aplicativo autenticador esteja rigorosamente ativo.
-> 
-> 3. **Notificação Forense e Acionamento do SOC / Equipe de TI:**
->    * **Ação:** Comunique formalmente o Centro de Operações de Segurança (SOC) ou o suporte técnico da organização, fornecendo o link exato (URL) ou o anexo suspeito **sem reabri-los**, além de detalhar se houve digitação de credenciais.
->    * **Fundamentação Técnica:** Permite que a equipe de resposta a incidentes isole logs de rede, realize a análise forense do host e inicie rapidamente os procedimentos de erradicação e recuperação do perímetro corporativo.
->   
+---
+
+## 🚨 5. Protocolo de Resposta a Incidentes: Guia Prático Pós-Clique (Contenção Imediata)
+
+Caso o colaborador identifique ou suspeite de uma interação maliciosa (clique em *phishing*, execução de carga maliciosa ou fornecimento de credenciais corporativas), o plano de ação imediata segue as diretrizes de contenção rápida:
+
+1. **Isolamento Físico e Lógico do Endpoint (Contenção Inicial):**
+   * **Ação:** Desative imediatamente o Wi-Fi, retire o cabo de rede Ethernet e desative conexões Bluetooth do computador ou dispositivo móvel afetado.
+   * **Fundamentação Técnica:** Interrompe instantaneamente o tráfego de rede e bloqueia o contato do *payload* com servidores de Comando e Controle (C2), prevenindo o *Lateral Movement* (movimento lateral na rede interna) e a exfiltração em massa de dados confidenciais.
+
+2. **Higienização de Credenciais e Revogação de Sessões (Mitigação de Impacto):**
+   * **Ação:** Utilizando um **dispositivo limpo e seguro** (como um smartphone pessoal conectado exclusivamente à rede móvel 4G/5G), acesse os painéis de controle das contas comprometidas (e-mail corporativo, VPN, sistemas internos).
+   * **Fundamentação Técnica:** Altere as senhas de acesso, force o encerramento remoto de todas as sessões ativas (*Token Revocation*) e certifique-se de que o **Múltiplo Fator de Autenticação (MFA)** com chaves de segurança ou aplicativo autenticador esteja rigorosamente ativo.
+
+3. **Notificação Forense e Acionamento do SOC / Equipe de TI:**
+   * **Ação:** Comunique formalmente o Centro de Operações de Segurança (SOC) ou o suporte técnico da organização, fornecendo o link exato (URL) ou o anexo suspeito **sem reabri-los**, além de detalhar se houve digitação de credenciais.
+   * **Fundamentação Técnica:** Permite que a equipe de resposta a incidentes isole logs de rede, realize a análise forense do host e inicie rapidamente os procedimentos de erradicação e recuperação do perímetro corporativo.
+
+---
 >      ---
 
 ## 6. Calculadora de Risco Pós-Clique (Simulador Interativo)
